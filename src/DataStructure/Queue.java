@@ -1,32 +1,29 @@
-package Queues;
-
-import List.Node;
-import List.SingleLinkedList;
+package DataStructure;
 
 public class Queue {
 	SingleLinkedList que;
 	Node front;
 	Node rear;
-	public Queue()
+	Queue()
 	{
 		que = new SingleLinkedList();
 		front = que.getHead();
 		rear = que.getEnd();
 	}
-	public void enqueue(int d)
+	void enqueue(int d)
 	{
 		que.insertAtEnd(d);
 		front = que.getHead();
 		rear = que.getEnd();
 	}
-	public int dequeue()
+	int dequeue()
 	{
 		int n = que.removeBegin();
 		front = que.getHead();
 		rear = que.getEnd();
 		return n;
 	}
-	public boolean isEmpty()
+	boolean isEmpty()
 	{
 		return (que.getHead()==null);
 	}

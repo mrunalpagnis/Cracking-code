@@ -1,4 +1,4 @@
-package List;
+package DataStructure;
 import javax.swing.JOptionPane;
 
 public class SingleLinkedListTest {
