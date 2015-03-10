@@ -1,4 +1,4 @@
-package DataStructure;
+package List;
 
 public class Node {
 	private int data;
@@ -26,7 +26,7 @@ public class Node {
 	{
 		next = n;
 	}
-	int getData()
+	public int getData()
 	{
 		return data;
 	}
@@ -39,7 +39,7 @@ public class Node {
 		data  = 0;
 		next = null;
 	}
-	boolean isNodeEmpty()
+	public boolean isNodeEmpty()
 	{
 		return (data == 0 && next == null);
 	}
