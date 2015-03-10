@@ -1,4 +1,4 @@
-package Trees;
+package DataStructure;
 import java.util.*;
 public class BinaryTreeTest {
 

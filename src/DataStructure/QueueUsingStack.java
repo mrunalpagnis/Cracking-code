@@ -1,6 +1,4 @@
-package Queues;
-
-import stacks.Stack;
+package DataStructure;
 
 
 public class QueueUsingStack {

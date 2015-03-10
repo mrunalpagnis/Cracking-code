@@ -1,4 +1,4 @@
-package Queues;
+package DataStructure;
 
 public class testQueue {
 

@@ -1,8 +1,8 @@
-package List;
+package DataStructure;
 
 public class SingleLinkedList {
 	private Node head = null;
-	public SingleLinkedList()
+	SingleLinkedList()
 	{
 		head = null;
 	}
@@ -10,15 +10,15 @@ public class SingleLinkedList {
 	{
 		head = h;
 	}
-	public Node getHead()
+	Node getHead()
 	{
 		return head;
 	}
-	public void setHead(Node h)
+	void setHead(Node h)
 	{
 		head = h;
 	}
-	public void insertAtEnd(int d)
+	void insertAtEnd(int d)
 	{
 		if(head==null)
 		{
@@ -32,7 +32,7 @@ public class SingleLinkedList {
 		}
 		n.setNext(new Node(d));		
 	}
-	public void insertAtN(int d, int n)
+	void insertAtN(int d, int n)
 	{
 		Node temp = head;
 		Node temp2 = null;
@@ -46,7 +46,7 @@ public class SingleLinkedList {
 		temp2.setNext(i);
 		i.setNext(temp);
 	}
-	public int getCount()
+	int getCount()
 	{
 		Node temp = head;
 		int n=0;
@@ -57,7 +57,7 @@ public class SingleLinkedList {
 		}
 		return n;
 	}
-	public void insertAtNfromEnd(int d,int n)
+	void insertAtNfromEnd(int d,int n)
 	{
 		int pos = getCount()-n+1;
 		if(pos<0)
@@ -73,12 +73,12 @@ public class SingleLinkedList {
 		Node i = new Node(d,temp);
 		prev.setNext(i);
 	}
-	public void insertAtbegin(int d)
+	void insertAtbegin(int d)
 	{
 		Node n = new Node(d,head);
 		head = n;
 	}
-	public Node getEnd()
+	Node getEnd()
 	{
 		Node temp = head;
 		while(temp!=null)
@@ -87,7 +87,7 @@ public class SingleLinkedList {
 		}
 		return temp;
 	}
-	public int getNdata(int n)
+	int getNdata(int n)
 	{
 		Node temp = head;
 		while(n>=0)
@@ -97,20 +97,20 @@ public class SingleLinkedList {
 		}
 		return temp.getData();
 	}
-	public Node getNode(int d)
+	Node getNode(int d)
 	{
 		Node temp = head;
 		while(temp!=null && temp.getData()!=d)
 			temp=temp.getNext();
 		return temp;
 	}
-	public int removeBegin()
+	int removeBegin()
 	{
 		int n = head.getData();
 		head = head.getNext();
 		return n;
 	}
-	public int removeEnd()
+	int removeEnd()
 	{
 		int n =0;
 		if(head.getNext()==null)
@@ -130,14 +130,14 @@ public class SingleLinkedList {
 		prev.setNext(null);
 		return n;
 	}
-	public int removeNode(Node i)
+	int removeNode(Node i)
 	{
 		int d = i.getData();
 		i.setData(i.getNext().getData());
 		i.setNext(i.getNext().getNext());
 		return d;
 	}
-	public void removeNode(int n)
+	void removeNode(int n)
 	{
 		Node temp = head;
 		Node prev = null;
@@ -149,7 +149,7 @@ public class SingleLinkedList {
 		}
 		prev.setNext(temp.getNext());
 	}
-	public int getOccurence(int d)
+	int getOccurence(int d)
 	{
 		Node temp = head;
 		int count =0;
@@ -161,7 +161,7 @@ public class SingleLinkedList {
 		}
 		return count;
 	}
-	public Node reverseList(Node h)
+	Node reverseList(Node h)
 	{
 		Node temp = h;
 		Node prev = null;
@@ -208,7 +208,7 @@ public class SingleLinkedList {
         }
         return result;
     }
-	public boolean compareList(Node h1)
+	boolean compareList(Node h1)
 	{
 		Node temp = this.head;
 		Node temp2 = h1;
@@ -221,7 +221,7 @@ public class SingleLinkedList {
 		}
 		return true;
 	}
-	public void insertInSortedList(int d)
+	void insertInSortedList(int d)
 	{
 		Node temp = head;
 		if(head == null || head.getData()>=d)
