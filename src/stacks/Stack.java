@@ -1,33 +1,36 @@
-package DataStructure;
+package stacks;
+
+import List.Node;
+import List.SingleLinkedList;
 
 public class Stack {
 	SingleLinkedList stk;
 	Node top;
-	Stack()
+	public Stack()
 	{
 		stk = new SingleLinkedList();
 		top = stk.getHead();
 	}
-	void push(int d)
+	public void push(int d)
 	{
 		stk.insertAtbegin(d);
 		top = stk.getHead();
 	}
-	int pop()
+	public int pop()
 	{
 		int n = stk.removeBegin();
 		top = stk.getHead();
 		return n;
 	}
-	Node viewTop()
+	public Node viewTop()
 	{
 		return top;
 	}
-	int peek()
+	public int peek()
 	{
 		return top.getData();
 	}
-	boolean isEmpty()
+	public boolean isEmpty()
 	{
 		return top.isNodeEmpty();
 	}

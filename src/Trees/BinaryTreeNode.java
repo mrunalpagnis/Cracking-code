@@ -1,4 +1,4 @@
-package DataStructure;
+package Trees;
 
 public class BinaryTreeNode {
 	BinaryTreeNode left;

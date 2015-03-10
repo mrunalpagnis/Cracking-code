@@ -1,4 +1,4 @@
-package DataStructure;
+package stacks;
 
 public class testStack {
 
