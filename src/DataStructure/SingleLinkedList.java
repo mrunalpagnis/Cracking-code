@@ -137,6 +137,9 @@ public class SingleLinkedList {
 		i.setNext(i.getNext().getNext());
 		return d;
 	}
+	/*
+	 * remove a particular node
+	 */
 	void removeNode(int n)
 	{
 		Node temp = head;
@@ -149,6 +152,9 @@ public class SingleLinkedList {
 		}
 		prev.setNext(temp.getNext());
 	}
+	/*
+	 *  get number of occurrences of node
+	 */
 	int getOccurence(int d)
 	{
 		Node temp = head;
@@ -161,6 +167,9 @@ public class SingleLinkedList {
 		}
 		return count;
 	}
+	/*
+	 *  reverse a linked list in place
+	 */
 	Node reverseList(Node h)
 	{
 		Node temp = h;
@@ -176,6 +185,9 @@ public class SingleLinkedList {
 		h = prev;
 		return h;
 	}
+	/*
+	 *  Check if a linked list is a palindrome
+	 */
 	public boolean isLinkedListIsPalindrome(Node n){
         Node slow,fast;
         slow=fast=n;
@@ -208,6 +220,9 @@ public class SingleLinkedList {
         }
         return result;
     }
+	/*
+	 *  Compare two linked list
+	 */
 	boolean compareList(Node h1)
 	{
 		Node temp = this.head;
@@ -221,6 +236,9 @@ public class SingleLinkedList {
 		}
 		return true;
 	}
+	/*
+	 * 	Insert a node such that the list remains sorted.
+	 */
 	void insertInSortedList(int d)
 	{
 		Node temp = head;

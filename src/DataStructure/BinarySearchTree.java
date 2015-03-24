@@ -203,4 +203,31 @@ public class BinarySearchTree {
 	{
 		return n==null;
 	}
+	/*
+	 * level order traversal 
+	 */
+	public void levelTraversal()
+	{
+		int h = getHeight(root);
+		for(int i=0;i<h+1;i++)
+		{
+			printLevel(root,i);
+		}
+	}
+	private void printLevel(BinaryTreeNode n, int l)
+	{
+		if(n==null)
+		{
+			return;
+		}
+		if(l==1)
+		{
+			System.out.print(n.data+" ");
+		}
+		else if(l>1)
+		{
+			printLevel(n.left, l-1);
+			printLevel(n.right,l-1);
+		}
+	}
 }

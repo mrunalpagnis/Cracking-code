@@ -5,7 +5,7 @@ public class BinaryTreeTest {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BinaryTree btree = new BinaryTree();
+		BinarySearchTree btree = new BinarySearchTree();
 		
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -41,7 +41,7 @@ public class BinaryTreeTest {
 
 		btree.InOrder(btree.root);
 		System.out.println();
-		System.out.println(btree.getHeight(btree.root));
+		btree.levelTraversal();
 		//System.out.print(btree.getMin(btree.root).data);
 		//btree.printPreSuc(3);
 		//btree.PreOrder(btree.root);
