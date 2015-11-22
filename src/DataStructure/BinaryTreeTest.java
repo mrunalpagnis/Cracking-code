@@ -46,7 +46,8 @@ public class BinaryTreeTest {
 		//btree.printPreSuc(3);
 		//btree.PreOrder(btree.root);
 		//System.out.println();
-		
+		btree.callIsBST();
+		btree.levelOrderTraversal();
 	}
 
 }

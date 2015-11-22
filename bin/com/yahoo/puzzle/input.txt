@@ -1,0 +1,5 @@
+4
+true false true false  
+true false true t
+false true false true  
+true false true true

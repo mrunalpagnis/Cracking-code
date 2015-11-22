@@ -61,36 +61,50 @@ public class Graph {
 		boolean visited[] = new boolean[graph.size()];
 		Set<Entry<Integer, List<GraphNode>>> eSet = graph.entrySet();
 		Iterator<Entry<Integer, List<GraphNode>>> iter = eSet.iterator();
+		int max = Integer.MIN_VALUE;
 		while(iter.hasNext()){
 			Entry<Integer, List<GraphNode>> entry = iter.next();
 			if(!visited[entry.getKey()]){
-				RecursiveDFStraverse(entry.getKey(),visited);
+				int result = RecursiveDFStraverse(entry.getKey(),visited);
+				if(result>max){
+					max = result;
+				}
 			}
-		}
-		
+		}		
+		System.out.println("\nMaximum depth : "+max);
 	}
-	private void RecursiveDFStraverse(int v, boolean[] visited) {
+	private int RecursiveDFStraverse(int v, boolean[] visited) {
 
         visited[v] = true;
         System.out.print(v+" ");
- 
+        if(graph.get(v).size()==0){
+        	return 0;
+        }
         ListIterator<GraphNode> i = graph.get(v).listIterator();
+        int max = Integer.MIN_VALUE;
         while (i.hasNext())
         {
             GraphNode n = i.next();
-            if (!visited[n.getVertex()])
-            	RecursiveDFStraverse(n.getVertex(),visited);
+            if (!visited[n.getVertex()]){
+            	int result = RecursiveDFStraverse(n.getVertex(),visited);
+            	if(result>max){
+            		max = result;
+            	}
+            }
         }
+        return max+1;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Edge []e = new Edge[6];
+		Edge []e = new Edge[8];
 		e[0] = new Edge(0,1,3);
 		e[1] = new Edge(0,2,1);
-		e[2] = new Edge(1,2,2);
-		e[3] = new Edge(2,0,2);
-		e[4] = new Edge(2,3,5);
-		e[5] = new Edge(3,3,2);
+		e[2] = new Edge(2,3,2);
+		e[3] = new Edge(1,3,2);
+		e[4] = new Edge(3,4,5);
+		e[5] = new Edge(2,5,2);
+		e[6] = new Edge(5,6,2);
+		e[7] = new Edge(6,7,2);
 		
 		Graph g = new Graph();
 		for(Edge eg : e){
@@ -116,8 +130,8 @@ public class Graph {
 			
 		}
 		g.printGraph();
-		System.out.println("DFS traversal : ");
-		g.printBFS();
+		//System.out.println("DFS traversal : ");
+		//g.printBFS();
 		System.out.println("\nRecursive DFS traversal : ");
 		g.printRecursiveDFS();
 	}

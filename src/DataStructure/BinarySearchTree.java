@@ -1,5 +1,6 @@
 package DataStructure;
-
+import java.util.LinkedList;
+import java.util.Queue;
 public class BinarySearchTree {
 	BinaryTreeNode root;
 	BinarySearchTree()
@@ -228,6 +229,47 @@ public class BinarySearchTree {
 		{
 			printLevel(n.left, l-1);
 			printLevel(n.right,l-1);
+		}
+	}
+	public boolean isBST(BinaryTreeNode r,int prev){
+		if(r != null){
+			if(r.left != null)
+				return isBST(r.left,prev);
+			if(r.data < prev)
+				return false;
+			prev = r.data;
+			if(r.right != null)
+				return isBST(r.right,prev);
+		}
+		return true;
+	}
+	public void callIsBST(){
+		int prev = Integer.MIN_VALUE;
+		System.out.println(isBST(root,prev));
+	}
+	public void levelOrderTraversal(){
+		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+		if(root == null)
+			return;
+		int count = 1;
+		q.add(root);
+		BinaryTreeNode none = new BinaryTreeNode(-1);
+		q.add(none);
+		while(!q.isEmpty()){
+			BinaryTreeNode temp = q.remove();
+			if(temp.data == -1){				
+				System.out.println(count);
+				if(q.isEmpty())
+					break;
+				q.add(none);
+				count++;				
+				continue;
+			}
+			if(temp.left!=null)
+			q.add(temp.left);
+			if(temp.right!=null)
+			q.add(temp.right);
+			System.out.print(temp.data+" ");
 		}
 	}
 }
